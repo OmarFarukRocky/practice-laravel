@@ -11,7 +11,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-
+Route::get('/dash', function () {
+    return view('layouts.dashboard');
+});
 
 Auth::routes();
 
@@ -25,6 +27,6 @@ Route::delete('category/delete/all',[CategoryAllDeleteController::class,'deleteM
 Route::resource('category', CategoryController::class);
 
 //sub_categories
-Route::get('subcategory/index',[SubcategoryController::class,'index']);
+Route::get('subcategory/index',[SubcategoryController::class,'index'])->name('subcategory.index');
 Route::get('subcategory/create',[SubcategoryController::class,'create'])->name('subcategory.create');
 Route::post('subcategory/store',[SubcategoryController::class,'store'])->name('subcategory.store');

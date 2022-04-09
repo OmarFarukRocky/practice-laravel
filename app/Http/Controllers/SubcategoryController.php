@@ -28,6 +28,10 @@ class SubcategoryController extends Controller
             'sub_category'=>'required'
         ]);
 
+       if(Subcategory::where('category_id',$request->category_id)->where('subcategory_name',$request->sub_category)->exists()){
+           return back()->with('exists','subcategory already exists');
+       }
+
         Subcategory::create([
             'category_id'=>$request->category_id,
             'subcategory_name'=>$request->sub_category,

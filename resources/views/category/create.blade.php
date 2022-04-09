@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
+<div class="">
 
     <div class="row">
         <div class="col-lg-6 m-auto">
-          
+        
             <div class="card mt-3">        
                 <div class="card-body">
                     <form action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
